@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<StackPane id="StackPane" prefHeight="350.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="main.MainMenuController">
+  <children>
+    <Group id="Group" StackPane.alignment="CENTER">
+      <children>
+        <Group id="Group" layoutX="193.0" layoutY="0.0">
+          <children>
+            <TextArea fx:id="textArea" disable="false" editable="true" layoutX="0.0" layoutY="0.0" prefHeight="211.0" prefWidth="379.0" wrapText="true" />
+            <TextArea fx:id="inputArea" layoutX="0.0" layoutY="247.0" onKeyReleased="#onKeyReleased" prefHeight="82.0" prefWidth="379.0" wrapText="true" />
+            <Label layoutX="0.0" layoutY="224.0" prefWidth="82.0" text="Type here:" />
+            <Button fx:id="sendButton" layoutX="324.0" layoutY="277.0" mnemonicParsing="false" onAction="#onSendMessage" text="Send" />
+          </children>
+        </Group>
+        <GridPane id="GridPane" layoutX="0.0" layoutY="3.0">
+          <children>
+            <Button fx:id="connectButton" mnemonicParsing="false" onAction="#onConnectToggled" prefWidth="140.0" text="Connect to server" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label text="Host" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="hostNameTF" prefWidth="140.0" text="localhost" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <TextField fx:id="portTF" prefWidth="140.0" text="1234" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="Port" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label text="User" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="userNameTF" prefWidth="140.0" text="user" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <VBox id="VBox" alignment="CENTER" layoutX="0.0" layoutY="119.0" spacing="5.0">
+          <children>
+            <Label text="Users list" />
+            <ListView id="usersList" fx:id="usersListView" prefHeight="187.0" prefWidth="183.0" />
+          </children>
+        </VBox>
+      </children>
+    </Group>
+  </children>
+</StackPane>
